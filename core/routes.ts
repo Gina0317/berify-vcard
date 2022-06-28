@@ -3,11 +3,11 @@ const routes = {
   signin: '/signIn',
   dashboard: {
     root: '/dashboard',
-    myCard: {
-      root: (id: string) => '/dashboard/myCard',
-      basicInfo: (id: string) => '/dashboard/myCard' + id + '/basicInfo',
-      contactInfo: (id: string) => '/dashboard/myCard' + id + 'contactInfo',
-      socialProfiles: (id: string) => '/dashboard/myCard' + id + 'socialProfiles',
+    myCards: {
+      root: (id: string) => '/dashboard/myCards',
+      basicInfo: (id: string) => '/dashboard/myCards' + id + '/basicInfo',
+      contactInfo: (id: string) => '/dashboard/myCards' + id + 'contactInfo',
+      socialProfiles: (id: string) => '/dashboard/myCards' + id + 'socialProfiles',
     },
   }
 };

@@ -32,7 +32,7 @@ SignIn.getInitialProps = async (context: any) => {
 
   if (session && res && session.accessToken) {
     res.writeHead(302, {
-      Location: "/dashboard/myCard",
+      Location: "/dashboard/myCards",
     });
     res.end()
     return;

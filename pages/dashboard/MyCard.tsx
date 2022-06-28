@@ -1,6 +1,6 @@
-const MyCard = () => {
+const myCards = () => {
   return (<>
   </>);
 }
 
-export default MyCard;
+export default myCards;
