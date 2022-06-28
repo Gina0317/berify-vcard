@@ -1,0 +1,17 @@
+
+
+$color-type:(
+  black : #000000,
+  dark: #3c3c3c,
+  white: #ffffff,
+  gray: #7c7c7c,
+  purple: #9c25ff,
+);
+@each $name,$color in $color-type {
+  .text-#{$name}{
+    color:$color;
+  }
+  .bg-#{$name}{
+    background: $color;
+  }
+}
