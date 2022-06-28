@@ -29,22 +29,28 @@ export default NextAuth({
 
         const logingInUser = await berifyDB.vCardUser.findUnique({
           where: { id: userId },
+          select: {
+            id: true,
+            email: true,
+            firstName: true,
+            lastName: true,
+            job: true,
+            companyName: true,
+            address: true,
+            bio: true,
+          }
         });
         if (!logingInUser) return null;
 
         return {
-          id: logingInUser.id,
-          email: logingInUser.email,
-          firstName: logingInUser.firstName,
-          lastName: logingInUser.lastName,
-          job: logingInUser.job,
-          companyName: logingInUser.companyName,
-          address: logingInUser.address,
-          bio: logingInUser.bio,
+          logingInUser
         };
       },
     }),
   ],
+  pages: {
+    signIn: '/SignIN'
+  },
   secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: 'jwt',

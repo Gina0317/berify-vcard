@@ -1,10 +1,14 @@
 const routes = {
   landing: '/',
-  signupLoginPage: '/SignUpLoginPage',
+  signin: '/signIn',
   dashboard: {
-    root: '/Dashboard',
-    myCard: '/Dashboard/MyCard',
-    cardInfo: '/Dashboard/CardInfo',
+    root: '/dashboard',
+    myCard: {
+      root: (id: string) => '/dashboard/myCard',
+      basicInfo: (id: string) => '/dashboard/myCard' + id + '/basicInfo',
+      contactInfo: (id: string) => '/dashboard/myCard' + id + 'contactInfo',
+      socialProfiles: (id: string) => '/dashboard/myCard' + id + 'socialProfiles',
+    },
   }
 };
 

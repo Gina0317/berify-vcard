@@ -15,7 +15,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
   if (!session) {
     return {
       redirect: {
-        permanent: false, destination: routes.signupLoginPage
+        permanent: false, destination: routes.signin,
       }
     };
   }

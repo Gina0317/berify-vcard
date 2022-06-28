@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { signIn } from "next-auth/react"
+import { getProviders, getSession, signIn } from "next-auth/react"
 
-const SignUpLoginPage = () => {
+const SignIn = ({ providers }: { providers: any }) => {
   const [form, setForm] = useState({
     email: '',
     password: '',
@@ -21,10 +21,26 @@ const SignUpLoginPage = () => {
             <button className="h5 btn-white" type="button">Login</button>
           </div>
         </div>
-        {/* <VCard /> */}
       </div>
     </>
   </>);
 }
 
-export default SignUpLoginPage
+SignIn.getInitialProps = async (context: any) => {
+  const { req, res } = context;
+  const session = await getSession({ req });
+
+  if (session && res && session.accessToken) {
+    res.writeHead(302, {
+      Location: "/dashboard/myCard",
+    });
+    res.end()
+    return;
+  }
+  return {
+    session: undefined,
+    providers: await getProviders()
+  }
+}
+
+export default SignIn
