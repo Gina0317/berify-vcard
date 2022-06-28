@@ -10,7 +10,8 @@ const routes = {
       contactInfo: (id: string) => '/dashboard/cardInfo/' + id + '/contactInfo',
       socialProfiles: (id: string) => '/dashboard/cardInfo/' + id + '/socialProfiles',
     },
-  }
+  },
+  vCard: '/vard',
 };
 
 export default routes;
