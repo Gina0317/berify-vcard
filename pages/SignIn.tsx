@@ -35,7 +35,7 @@ const SignIn = ({ providers }: { providers: any }) => {
               <h6 className="text-dark">By clicking on sign up,
                 you agree to Berify’s Terms of Use and privacy policy.</h6>
             </div>
-            <button className="w-100 btn-purple h5" type="button">Sign Up</button>
+            <button className="w-100 btn-purple h5" type="button">SignUp</button>
           </div>
         </div>
       </div>
